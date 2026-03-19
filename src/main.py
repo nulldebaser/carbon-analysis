@@ -72,3 +72,40 @@ def load_and_clean():
     print(df["value"].describe())
 
     return df
+
+
+# data analysis
+def analysis_part(df):
+    subset = df[
+        (df["country"] == country_asig)
+        & (df["year"] == year_asig)
+        & (df["sector"] == sector_asig)
+    ]
+
+    values = subset["value"].values
+
+    mean = np.mean(values)
+    std = np.std(values)
+
+    print("\nPromedio:", mean)
+    print("Desviación estándar:", std)
+
+    max_idx = np.argmax(values)
+    min_idx = np.argmin(values)
+
+    max_row = subset.iloc[max_idx]
+    min_row = subset.iloc[min_idx]
+
+    print("\nMáximo:")
+    print(max_row["date"], max_row["value"])
+
+    print("\nMínimo:")
+    print(min_row["date"], min_row["value"])
+
+    low_days = subset[subset["value"] < (mean - std)]
+
+    print("\nCantidad de días bajos:", len(low_days))
+    print("Primeras 5 fechas:")
+    print(low_days["date"].head())
+
+    return subset, mean, std, max_row, min_row
