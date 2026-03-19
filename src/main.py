@@ -152,11 +152,61 @@ def build_matrix(df):
     return A, col_means, row_sums
 
 
+# graphs
+def plot_all(subset, max_row, min_row, col_means, row_sums):
+    plt.figure()
+    plt.plot(subset["date"], subset["value"])
+    plt.scatter(max_row["date"], max_row["value"])
+    plt.scatter(min_row["date"], min_row["value"])
+    plt.title("Serie temporal")
+    plt.xlabel("Fecha")
+    plt.ylabel("Value")
+    plt.savefig("../outputs/figures/time_series.png")
+    plt.close()
+
+    plt.figure()
+    plt.bar(sectors, col_means)
+    plt.xticks(rotation=45)
+    plt.title("Promedio anual por sector")
+    plt.savefig("../outputs/figures/sector_bar.png")
+    plt.close()
+
+    plt.figure()
+    plt.plot(range(1, 13), row_sums)
+    plt.title("Total mensual")
+    plt.xlabel("Mes")
+    plt.ylabel("Total")
+    plt.savefig("../outputs/figures/monthly_trend.png")
+    plt.close()
+
+
+# printing to results.txt
+def save_results(mean, std, max_row, min_row, col_means, row_sums):
+    with open(f"../outputs/results_seed_{seed}.txt", "w") as f:
+        f.write("carbon-analysis — Resultados\n\n")
+
+        f.write(f"Seed: {seed}\n")
+        f.write(f"País asignado: {country_asig}\n")
+        f.write(f"Sector asignado: {sector_asig}\n")
+        f.write(f"Año asignado: {year_asig}\n\n")
+
+        f.write(f"Promedio: {mean:.4f}\n")
+        f.write(f"Desviación estándar: {std:.4f}\n\n")
+
+        f.write(f"Máximo: {max_row['date']} -> {max_row['value']:.4f}\n")
+        f.write(f"Mínimo: {min_row['date']} -> {min_row['value']:.4f}\n\n")
+
+        f.write(f"Sector con mayor promedio: {sectors[np.argmax(col_means)]}\n")
+        f.write(f"Mes con mayor total: {np.argmax(row_sums) + 1}\n")
+
+
 # main
 def main():
     df = load_and_clean()
     subset, mean, std, max_row, min_row = analysis_part(df)
     A, col_means, row_sums = build_matrix(df)
+    plot_all(subset, max_row, min_row, col_means, row_sums)
+    save_results(mean, std, max_row, min_row, col_means, row_sums)
 
 
 if __name__ == "__main__":
