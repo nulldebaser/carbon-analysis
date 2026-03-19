@@ -109,3 +109,13 @@ def analysis_part(df):
     print(low_days["date"].head())
 
     return subset, mean, std, max_row, min_row
+
+
+# main
+def main():
+    df = load_and_clean()
+    subset, mean, std, max_row, min_row = analysis_part(df)
+
+
+if __name__ == "__main__":
+    main()
