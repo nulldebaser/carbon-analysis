@@ -30,6 +30,7 @@ The program automatically assigns a **country**, **sector**, and **year** based 
 
 ## Project Structure
 
+```
 carbon-analysis/
 │
 ├── data/
@@ -48,7 +49,7 @@ carbon-analysis/
 │
 ├── README.md
 └── requirements.txt
-
+```
 ---
 
 ## How It Works
@@ -135,7 +136,10 @@ The function `plot_all(...)` generates three plots:
 
 All plots are saved in:
 
+```
 outputs/figures/
+
+```
 
 ---
 
@@ -143,7 +147,10 @@ outputs/figures/
 
 The function `save_results(...)` writes key results into:
 
+```
 outputs/results_seed_811.txt
+
+```
 
 Contents include:
 
@@ -159,16 +166,23 @@ Contents include:
 
 1. Install dependencies:
 
+```
 pip install pandas numpy matplotlib
+
+```
 
 2. Make sure the dataset exists at:
 
+```
 data/carbonmonitor-global_datas_2025-04-21.csv
 
+```
 3. Run the script:
 
+```
 python src/main.py
 
+```
 ---
 
 ## Example Output
