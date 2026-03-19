@@ -165,9 +165,9 @@ def plot_all(subset, max_row, min_row, col_means, row_sums):
     plt.savefig("../outputs/figures/time_series.png")
     plt.close()
 
-    plt.figure(figsize=(10, 7))  # increased height
+    plt.figure(figsize=(10, 7))
     plt.bar(sectors, col_means)
-    plt.xticks(rotation=45, fontsize=8)  # smaller text
+    plt.xticks(rotation=45, fontsize=8)
     plt.title("Promedio anual por sector")
     plt.tight_layout()  # prevents labels from being cut off
     plt.savefig("../outputs/figures/sector_bar.png")
