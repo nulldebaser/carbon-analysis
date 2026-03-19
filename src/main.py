@@ -49,3 +49,26 @@ print("Seed:", seed)
 print("País asignado:", country_asig)
 print("Sector asignado:", sector_asig)
 print("Año asignado:", year_asig)
+
+
+# reading and cleaning data
+def load_and_clean():
+    df = pd.read_csv(DATA_PATH)
+
+    if "Unnamed: 4" in df.columns:
+        df = df.drop(columns=["Unnamed: 4"])
+
+    df["date"] = pd.to_datetime(df["date"], dayfirst=True)
+    df["year"] = df["date"].dt.year
+    df["month"] = df["date"].dt.month
+
+    print("\nHEAD:")
+    print(df.head())
+
+    print("\nINFO:")
+    print(df.info())
+
+    print("\nDESCRIBE (value):")
+    print(df["value"].describe())
+
+    return df
