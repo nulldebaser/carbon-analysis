@@ -154,28 +154,31 @@ def build_matrix(df):
 
 # graphs
 def plot_all(subset, max_row, min_row, col_means, row_sums):
-    plt.figure()
+    plt.figure(figsize=(10, 5))
     plt.plot(subset["date"], subset["value"])
     plt.scatter(max_row["date"], max_row["value"])
     plt.scatter(min_row["date"], min_row["value"])
     plt.title("Serie temporal")
     plt.xlabel("Fecha")
     plt.ylabel("Value")
+    plt.tight_layout()
     plt.savefig("../outputs/figures/time_series.png")
     plt.close()
 
-    plt.figure()
+    plt.figure(figsize=(10, 7))  # increased height
     plt.bar(sectors, col_means)
-    plt.xticks(rotation=45)
+    plt.xticks(rotation=45, fontsize=8)  # smaller text
     plt.title("Promedio anual por sector")
+    plt.tight_layout()  # prevents labels from being cut off
     plt.savefig("../outputs/figures/sector_bar.png")
     plt.close()
 
-    plt.figure()
+    plt.figure(figsize=(10, 5))
     plt.plot(range(1, 13), row_sums)
     plt.title("Total mensual")
     plt.xlabel("Mes")
     plt.ylabel("Total")
+    plt.tight_layout()
     plt.savefig("../outputs/figures/monthly_trend.png")
     plt.close()
 
