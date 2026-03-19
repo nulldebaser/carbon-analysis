@@ -1,0 +1,35 @@
+carbon-analysis — Análisis
+
+Seed: 811
+País asignado: WORLD
+Sector asignado: International Aviation
+Año asignado: 2022
+
+Análisis del sector:
+
+El promedio de emisiones para el sector fue aproximadamente 1.356, con una desviación estándar
+de 0.156, lo que indica que los valores son relativamente estables a lo largo del año.
+
+El valor máximo se registró el 6 de agosto de 2022 con aproximadamente 1.58, mientras que
+el valor mínimo ocurrió el 8 de febrero de 2022 con aproximadamente 0.97. Esto sugiere un aumento
+de la actividad en meses intermedios del año, posiblemente asociado a temporadas de mayor
+movilidad.
+
+Se identificaron 73 días con valores bajos (por debajo de promedio − desviación estándar), lo
+que refleja la presencia de periodos con menor actividad dentro del año.
+
+Análisis de la matriz (12×6):
+
+Al analizar la matriz por columnas (sectores), se observa que el sector con mayor promedio anual
+es Power, seguido por Industry y Ground Transport. Esto indica que la generación de energía es la
+principal fuente de emisiones en el país y año analizados.
+
+Al analizar la matriz por filas (meses), el mes con mayor total de emisiones es enero. Esto
+podría explicarse por una mayor demanda energética, posiblemente relacionada con condiciones
+estacionales.
+
+Conclusión:
+
+El sector de aviación internacional presenta variaciones moderadas a lo largo del año, pero
+no es dominante en comparación con otros sectores. La mayor contribución a las emisiones proviene
+del sector energético, lo cual coincide con patrones globales de consumo.

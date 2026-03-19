@@ -1,0 +1,15 @@
+carbon-analysis — Resultados
+
+Seed: 811
+País asignado: WORLD
+Sector asignado: International Aviation
+Año asignado: 2022
+
+Promedio: 1.3562
+Desviación estándar: 0.1565
+
+Máximo: 2022-08-06 00:00:00 -> 1.5807
+Mínimo: 2022-02-08 00:00:00 -> 0.9736
+
+Sector con mayor promedio: Power
+Mes con mayor total: 1
