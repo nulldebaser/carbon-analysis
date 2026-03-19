@@ -30,23 +30,24 @@ The program automatically assigns a **country**, **sector**, and **year** based 
 
 ## Project Structure
 
-```
-project/
+carbon-analysis/
 │
 ├── data/
 │   └── carbonmonitor-global_datas_2025-04-21.csv
 │
 ├── outputs/
+│   ├── analysis.txt
 │   ├── figures/
-│   │   ├── time_series.png
+│   │   ├── monthly_trend.png
 │   │   ├── sector_bar.png
-│   │   └── monthly_trend.png
-│   │
-│   └── results.txt
+│   │   └── time_series.png
+│   └── results_seed_811.txt
 │
-└── src/
-    └── main.py
-```
+├── src/
+│   └── main.py
+│
+├── README.md
+└── requirements.txt
 
 ---
 
@@ -134,9 +135,7 @@ The function `plot_all(...)` generates three plots:
 
 All plots are saved in:
 
-```
 outputs/figures/
-```
 
 ---
 
@@ -144,9 +143,7 @@ outputs/figures/
 
 The function `save_results(...)` writes key results into:
 
-```
-outputs/results.txt
-```
+outputs/results_seed_811.txt
 
 Contents include:
 
@@ -162,21 +159,15 @@ Contents include:
 
 1. Install dependencies:
 
-```bash
 pip install pandas numpy matplotlib
-```
 
 2. Make sure the dataset exists at:
 
-```
-../data/carbonmonitor-global_datas_2025-04-21.csv
-```
+data/carbonmonitor-global_datas_2025-04-21.csv
 
 3. Run the script:
 
-```bash
-python main.py
-```
+python src/main.py
 
 ---
 
@@ -191,10 +182,10 @@ Console output includes:
 
 Generated files:
 
-- `time_series.png`
-- `sector_bar.png`
-- `monthly_trend.png`
-- `results.txt`
+- time_series.png
+- sector_bar.png
+- monthly_trend.png
+- results_seed_811.txt
 
 ---
 
@@ -229,4 +220,3 @@ Alejandro Patino Rivera
 ## License
 
 This project is for educational purposes.
-
